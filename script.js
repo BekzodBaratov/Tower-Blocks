@@ -127,19 +127,19 @@ gameOverRetry.addEventListener("click", function () {
   scoreText.innerHTML = score;
   game = true;
   block.x = 0;
-  canvas.width < 500 ? (block.w = 200) : (block.w = 300);
+  canvas.width < 500 ? (block.w = 150) : (block.w = 300);
   blocksArray.splice(0, blocksArray.length - 8);
   console.log(blocksArray);
 });
 
 function drawBlock() {
-  lvl = Math.round(score / 2);
+  lvl = Math.round(score / 4);
   block.x += block.speedBlock + (lvl * block.speedBlock) / 4;
 
   if (block.x < 0) {
-    block.speedBlock = 4;
+    block.speedBlock = 2;
   } else if (block.x + block.w > canvas.width) {
-    block.speedBlock = -4;
+    block.speedBlock = -2;
   }
   context.fillStyle = "#4f2000";
   context.fillRect(block.x, block.y, block.w, block.h);
