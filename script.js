@@ -24,7 +24,10 @@ let block = {
   h: 30,
 };
 
-if (canvas.width < 500) block.w = 200;
+if (canvas.width < 500) {
+block.w = 150;
+block.speedBlock = 1
+}
 
 const configs = {
   firstBc: {
